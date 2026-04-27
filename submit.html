@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Submitted</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #00ff88;">Test Submitted Successfully ✅</h1>
+        <p style="margin: 1.5rem 0;">Thank you for participating. Your responses and time have been recorded.</p>
+        <p>You may now close this window.</p>
+    </div>
+    <script>
+        // Clear local storage to prevent re-entry
+        localStorage.removeItem('neon_test_user');
+        
+        // Disable back button
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+    </script>
+</body>
+</html>
