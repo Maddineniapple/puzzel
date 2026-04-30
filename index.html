@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICIDHAI 2026 - International Conference on Innovations in Digital Humanities through AI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -19,7 +18,6 @@
             --text-dark: #2c3e50;
             --text-light: #7f8c8d;
             --border: #e0d5c7;
-            --dark-blue: #0f1419;
         }
 
         body {
@@ -40,7 +38,7 @@
         }
 
         nav .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
@@ -53,7 +51,6 @@
             font-size: 1.3rem;
             font-weight: bold;
             letter-spacing: 1px;
-            font-family: 'Playfair Display', serif;
         }
 
         nav ul {
@@ -68,7 +65,6 @@
             text-decoration: none;
             transition: color 0.3s;
             font-size: 0.95rem;
-            font-weight: 500;
         }
 
         nav a:hover {
@@ -93,130 +89,59 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* HERO SECTION - EXACT DESIGN */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1a2e4a 0%, #0f1e2e 50%, #1a2332 100%);
-            position: relative;
-            overflow: hidden;
-            min-height: 700px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4rem 2rem;
-        }
-
-        /* Animated background elements */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -100px;
-            left: -100px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(20px); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 900px;
-            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, #2d3e50 100%);
             color: white;
-            animation: fadeInDown 0.8s ease-out;
+            padding: 6rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 600px;
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-date {
-            font-size: 1rem;
-            color: var(--secondary);
-            font-weight: 600;
-            letter-spacing: 1px;
+        .hero-content h1 {
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
+            font-weight: 700;
             font-family: 'Playfair Display', serif;
-            letter-spacing: -1px;
         }
 
-        .hero-subtitle {
-            font-size: 1.8rem;
-            color: var(--secondary);
+        .hero-content .subtitle {
+            font-size: 1.2rem;
             margin-bottom: 1.5rem;
-            font-weight: 600;
-            font-family: 'Playfair Display', serif;
+            color: var(--secondary);
+            font-weight: 500;
         }
 
-        .hero-description {
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
+        .hero-content p {
+            margin-bottom: 1.5rem;
             line-height: 1.8;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        .hero-content .dates {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            font-weight: 600;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1.5rem;
-            justify-content: center;
+            gap: 1rem;
             flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.3s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .btn {
             display: inline-block;
-            padding: 1rem 2.5rem;
+            padding: 0.9rem 2rem;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s;
@@ -234,8 +159,7 @@
         .btn-primary:hover {
             background-color: transparent;
             color: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
@@ -246,24 +170,35 @@
         .btn-secondary:hover {
             background-color: var(--secondary);
             color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
         /* Sections */
         section {
-            padding: 5rem 2rem;
+            padding: 4rem 2rem;
         }
 
         section h2 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 3rem;
             text-align: center;
             color: var(--primary);
             position: relative;
-            padding-bottom: 1.5rem;
+            padding-bottom: 1rem;
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
         }
 
         section h2::after {
@@ -272,9 +207,9 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
         }
 
         /* About Section */
@@ -285,36 +220,33 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
         }
 
         .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             color: var(--primary);
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
         }
 
         .about-text p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--text-light);
-            line-height: 1.9;
-            font-size: 1.05rem;
+            line-height: 1.8;
         }
 
         .about-text ul {
             list-style: none;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
 
         .about-text li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
             position: relative;
             color: var(--text-light);
-            line-height: 1.8;
         }
 
         .about-text li::before {
@@ -323,54 +255,49 @@
             left: 0;
             color: var(--secondary);
             font-weight: bold;
-            font-size: 1.2rem;
         }
 
         .about-image img {
             max-width: 100%;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         /* Details Section */
         .details {
-            background: linear-gradient(135deg, var(--accent) 0%, #f0e8d8 100%);
+            background-color: var(--accent);
         }
 
         .details-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .detail-card {
             background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
+            padding: 2rem;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            border-top: 4px solid var(--secondary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
 
         .detail-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
         }
 
         .detail-card h3 {
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
         }
 
         .detail-card p {
             color: var(--text-light);
-            font-size: 1.05rem;
         }
 
         /* Publication Section */
@@ -381,52 +308,38 @@
         .publication-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
+            gap: 3rem;
+            margin-top: 2rem;
             align-items: center;
         }
 
         .publication-cards {
             display: grid;
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .publication-card {
             background: linear-gradient(135deg, var(--primary) 0%, #2d3e50 100%);
             color: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            transition: all 0.3s;
-            border-left: 5px solid var(--secondary);
-        }
-
-        .publication-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .publication-card h3 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--secondary);
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        .publication-card p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            opacity: 0.95;
         }
 
         .publication-card ul {
             list-style: none;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
 
         .publication-card li {
-            padding: 0.6rem 0;
+            padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
         }
@@ -443,32 +356,32 @@
             max-width: 100%;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         /* Speakers Section */
         .speakers {
-            background: linear-gradient(135deg, var(--accent) 0%, #f0e8d8 100%);
+            background-color: var(--accent);
         }
 
         .speakers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .speaker-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
         }
 
         .speaker-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
         }
 
         .speaker-photo {
@@ -479,9 +392,8 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 3rem;
+            font-size: 2.5rem;
             overflow: hidden;
-            position: relative;
         }
 
         .speaker-photo img {
@@ -492,7 +404,6 @@
 
         .speaker-info {
             padding: 1.5rem;
-            text-align: center;
         }
 
         .speaker-info h3 {
@@ -500,7 +411,6 @@
             margin-bottom: 0.5rem;
             font-size: 1rem;
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
         }
 
         .speaker-info .designation {
@@ -522,48 +432,41 @@
 
         .objectives-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .objective-card {
             background: var(--accent);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border-left: 5px solid var(--secondary);
-            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-        }
-
-        .objective-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .objective-card h3 {
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
         }
 
         .objective-card p {
             color: var(--text-light);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         /* Themes Section */
         .themes {
-            background: linear-gradient(135deg, var(--accent) 0%, #f0e8d8 100%);
+            background-color: var(--accent);
         }
 
         .themes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
         .theme-item {
@@ -573,18 +476,17 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
 
         .theme-item:hover {
-            transform: translateX(8px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateX(5px);
         }
 
         .theme-arrow {
             color: var(--secondary);
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
             flex-shrink: 0;
         }
@@ -602,21 +504,21 @@
         .fees-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 2.5rem;
+            margin-top: 2rem;
             background: white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             border-radius: 8px;
             overflow: hidden;
         }
 
         .fees-table thead {
-            background: linear-gradient(135deg, var(--primary) 0%, #2d3e50 100%);
+            background-color: var(--primary);
             color: white;
         }
 
         .fees-table th,
         .fees-table td {
-            padding: 1.3rem;
+            padding: 1.2rem;
             text-align: left;
             border-bottom: 1px solid var(--border);
             font-size: 0.95rem;
@@ -627,7 +529,7 @@
         }
 
         .fees-table th {
-            font-weight: 700;
+            font-weight: 600;
             color: white;
         }
 
@@ -636,18 +538,17 @@
         }
 
         .fees-notes {
-            margin-top: 2.5rem;
+            margin-top: 2rem;
             background: var(--accent);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 8px;
-            border-left: 5px solid var(--secondary);
+            border-left: 4px solid var(--secondary);
         }
 
         .fees-notes h3 {
             color: var(--primary);
             margin-bottom: 1rem;
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
         }
 
         .fees-notes ul {
@@ -656,7 +557,7 @@
         }
 
         .fees-notes li {
-            padding: 0.6rem 0;
+            padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
             color: var(--text-light);
@@ -672,43 +573,36 @@
 
         /* Important Dates */
         .dates-section {
-            background: linear-gradient(135deg, var(--accent) 0%, #f0e8d8 100%);
+            background-color: var(--accent);
         }
 
         .dates-timeline {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .date-item {
             background: white;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border-top: 5px solid var(--secondary);
-            transition: all 0.3s;
-        }
-
-        .date-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary);
         }
 
         .date-item .date {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--secondary);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
             font-family: 'Playfair Display', serif;
         }
 
         .date-item .event {
             color: var(--primary);
             font-weight: 600;
-            font-size: 1rem;
         }
 
         /* Organizing Institutions */
@@ -718,73 +612,56 @@
 
         .institutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .institution-card {
             background: linear-gradient(135deg, var(--primary) 0%, #2d3e50 100%);
             color: white;
-            padding: 2.5rem;
-            border-radius: 12px;
+            padding: 2rem;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            transition: all 0.3s;
-        }
-
-        .institution-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
         }
 
         .institution-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
             color: var(--secondary);
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
         }
 
         .institution-card p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             opacity: 0.9;
-            line-height: 1.6;
         }
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, var(--accent) 0%, #f0e8d8 100%);
+            background-color: var(--accent);
         }
 
         .contact-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .contact-card {
             background: linear-gradient(135deg, var(--primary) 0%, #2d3e50 100%);
             color: white;
-            padding: 2.5rem;
-            border-radius: 12px;
+            padding: 2rem;
+            border-radius: 8px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            transition: all 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
         .contact-card h3 {
             margin-bottom: 1rem;
             color: var(--secondary);
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.3rem;
         }
 
         .contact-card p {
@@ -795,32 +672,10 @@
             color: var(--secondary);
             text-decoration: none;
             transition: color 0.3s;
-            font-weight: 600;
         }
 
         .contact-card a:hover {
             color: white;
-        }
-
-        /* Register Section */
-        .register-section {
-            background: linear-gradient(135deg, var(--primary) 0%, #2d3e50 100%);
-            color: white;
-        }
-
-        .register-section h2 {
-            color: white;
-        }
-
-        .register-section p {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .register-button-container {
-            text-align: center;
         }
 
         /* Footer */
@@ -828,36 +683,46 @@
             background-color: var(--primary);
             color: white;
             text-align: center;
-            padding: 3rem 2rem;
-            border-top: 3px solid var(--secondary);
+            padding: 2rem;
         }
 
-        footer p {
-            margin-bottom: 0.5rem;
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
-                gap: 0.8rem;
+                gap: 1rem;
                 font-size: 0.85rem;
             }
 
             .hero {
-                min-height: 500px;
-                padding: 2rem;
+                grid-template-columns: 1fr;
+                padding: 3rem 2rem;
             }
 
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.3rem;
-            }
-
-            .hero-description {
-                font-size: 1rem;
+            .hero-content h1 {
+                font-size: 2rem;
             }
 
             .about-content,
@@ -880,14 +745,6 @@
             .dates-timeline {
                 grid-template-columns: 1fr;
             }
-
-            .objectives-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .institutions-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -895,7 +752,7 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">IC ICIDHAI 2026</div>
+            <div class="logo">ICIDHAI 2026</div>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#details">Details</a></li>
@@ -908,17 +765,45 @@
         </div>
     </nav>
 
-    <!-- Hero Section - EXACT DESIGN -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-date">31 July - 1 August 2026</div>
-            <h1 class="hero-title">ICIDHAI 2026</h1>
-            <h2 class="hero-subtitle">International Conference on Innovations in Digital Humanities through AI</h2>
-            <p class="hero-description">Join scholars, researchers, and innovators from 8 countries to explore the transformative intersection of digital humanities and artificial intelligence.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="document.getElementById('register-form').scrollIntoView({behavior: 'smooth'})">Register Now</button>
-                <button class="btn btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+        <div class="container" style="grid-column: 1;">
+            <div class="hero-content">
+                <div class="dates">31 July - 1 August 2026</div>
+                <h1>ICIDHAI 2026</h1>
+                <p class="subtitle">International Conference on Innovations in Digital Humanities through AI</p>
+                <p>Join scholars, researchers, and innovators from 8 countries to explore the transformative intersection of digital humanities and artificial intelligence.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('register-form').scrollIntoView({behavior: 'smooth'})">Register Now</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+                </div>
             </div>
+        </div>
+        <div class="hero-image">
+            <svg viewBox="0 0 400 400" style="width: 100%; max-width: 400px; height: auto;">
+                <defs>
+                    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#f5f1e8;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#d4a574;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="400" height="400" fill="url(#heroGrad)" rx="20"/>
+                <circle cx="200" cy="200" r="150" fill="none" stroke="#1a2332" stroke-width="2" opacity="0.3"/>
+                <circle cx="200" cy="200" r="100" fill="none" stroke="#d4a574" stroke-width="3"/>
+                <circle cx="200" cy="200" r="80" fill="#1a2332" opacity="0.1"/>
+                <text x="200" y="210" font-size="60" fill="#d4a574" text-anchor="middle" font-weight="bold">AI</text>
+                <g opacity="0.6">
+                    <circle cx="150" cy="150" r="8" fill="#1a2332"/>
+                    <circle cx="250" cy="150" r="8" fill="#1a2332"/>
+                    <circle cx="150" cy="250" r="8" fill="#1a2332"/>
+                    <circle cx="250" cy="250" r="8" fill="#1a2332"/>
+                    <line x1="150" y1="150" x2="250" y2="150" stroke="#d4a574" stroke-width="1"/>
+                    <line x1="150" y1="250" x2="250" y2="250" stroke="#d4a574" stroke-width="1"/>
+                    <line x1="150" y1="150" x2="150" y2="250" stroke="#d4a574" stroke-width="1"/>
+                    <line x1="250" y1="150" x2="250" y2="250" stroke="#d4a574" stroke-width="1"/>
+                </g>
+                <text x="200" y="350" font-size="14" fill="#1a2332" text-anchor="middle" font-weight="bold">DIGITAL HUMANITIES & AI COLLABORATION</text>
+            </svg>
         </div>
     </section>
 
@@ -1017,6 +902,11 @@
                         <circle cx="150" cy="80" r="50" fill="none" stroke="#1a2332" stroke-width="2"/>
                         <circle cx="150" cy="80" r="45" fill="#d4a574" opacity="0.3"/>
                         <path d="M 150 35 Q 170 50 170 80 Q 170 110 150 125 Q 130 110 130 80 Q 130 50 150 35" fill="#1a2332" opacity="0.5"/>
+                        <!-- Decorative elements -->
+                        <circle cx="80" cy="50" r="3" fill="#d4a574"/>
+                        <circle cx="220" cy="60" r="3" fill="#d4a574"/>
+                        <circle cx="90" cy="350" r="2" fill="#d4a574"/>
+                        <circle cx="210" cy="360" r="2" fill="#d4a574"/>
                     </svg>
                 </div>
             </div>
@@ -1027,7 +917,7 @@
     <section class="speakers" id="speakers">
         <div class="container">
             <h2>Key Note Speakers</h2>
-            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem; font-size: 1.05rem;">Distinguished academics and researchers from around the world</p>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Distinguished academics and researchers from around the world</p>
             <div class="speakers-grid">
                 <div class="speaker-card">
                     <div class="speaker-photo">👨‍🏫</div>
@@ -1110,6 +1000,7 @@
                     </div>
                 </div>
             </div>
+            <p style="text-align: center; color: var(--text-light); margin-top: 2rem;">Add speaker photos: You can replace the photo placeholders with actual speaker images by uploading them to the website.</p>
         </div>
     </section>
 
@@ -1150,7 +1041,7 @@
     <section class="themes" id="themes">
         <div class="container">
             <h2>Conference Themes</h2>
-            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem; font-size: 1.05rem;">Comprehensive list of topics covered at ICIDHAI 2026</p>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Comprehensive list of topics covered at ICIDHAI 2026</p>
             <div class="themes-grid">
                 <div class="theme-item"><span class="theme-arrow">→</span><p>AI and the Future of Literary Studies</p></div>
                 <div class="theme-item"><span class="theme-arrow">→</span><p>Computational Stylistics and Distant Reading</p></div>
@@ -1299,14 +1190,14 @@
     </section>
 
     <!-- Registration Form Section -->
-    <section class="register-section" id="register-form">
+    <section style="background-color: var(--accent); padding: 4rem 2rem;" id="register-form">
         <div class="container">
             <h2>Ready to Join?</h2>
-            <p>Register now to submit your research paper, attend presentations, and network with international scholars. Spaces are limited!</p>
-            <div class="register-button-container">
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem; font-size: 1.1rem;">Register now to submit your research paper, attend presentations, and network with international scholars. Spaces are limited!</p>
+            <div style="text-align: center;">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-stzl5TTuQIUEQlMXQltMTzXS-sOLhhi1nmDyepn1WUuRiA/viewform?usp=publish-editor" class="btn btn-primary" target="_blank">Register Now on Google Form</a>
             </div>
-            <p style="margin-top: 2rem;">Registration closes on 15 July 2026. Early registration recommended!</p>
+            <p style="text-align: center; color: var(--text-light); margin-top: 2rem;">Registration closes on 15 July 2026. Early registration recommended!</p>
         </div>
     </section>
 
@@ -1333,8 +1224,10 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 ICIDHAI - International Conference on Innovations in Digital Humanities through AI</p>
-        <p>Organized by GNITC, GNU & GNIT</p>
+        <div class="container">
+            <p>&copy; 2026 ICIDHAI - International Conference on Innovations in Digital Humanities through AI</p>
+            <p>Organized by GNITC, GNU & GNIT</p>
+        </div>
     </footer>
 
     <script>
@@ -1367,7 +1260,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.speaker-card, .detail-card, .publication-card, .date-item, .objective-card, .theme-item, .institution-card, .contact-card').forEach(el => {
+        document.querySelectorAll('.speaker-card, .detail-card, .publication-card, .date-item, .objective-card, .theme-item, .institution-card').forEach(el => {
             observer.observe(el);
         });
     </script>
