@@ -908,6 +908,217 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* Committee and Board Sections */
+        .committee-section {
+            background-color: var(--accent);
+            padding: 4rem 0;
+        }
+        
+        .board-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .board-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .board-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        
+        .board-list {
+            list-style: none;
+        }
+        
+        .board-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .board-list li::before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Guidelines and Policy */
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .guideline-card {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .guideline-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .guideline-list {
+            list-style: none;
+        }
+        
+        .guideline-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .guideline-list li::before {
+            content: "→";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Redesigned Publishing Partners */
+        .partners-section {
+            background: linear-gradient(to bottom, #ffffff, var(--accent));
+            padding: 5rem 0;
+        }
+        
+        .partners-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .partners-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .partners-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .partners-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .partners-featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 0 1rem;
+        }
+        
+        .partner-card-premium {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .partner-card-premium:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(212, 165, 116, 0.15);
+            border-color: var(--secondary);
+        }
+        
+        .partner-badge {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 8px 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            align-self: flex-start;
+            border-bottom-right-radius: 15px;
+        }
+        
+        .partner-card-content {
+            padding: 2.5rem;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .partner-card-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .partner-card-content .location {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        .partner-card-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .partner-meta {
+            background: var(--accent);
+            padding: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            border-top: 1px solid rgba(212, 165, 116, 0.1);
+        }
+        
+        .isbn-tag {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .board-container, .guidelines-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -916,6 +1127,8 @@
         <div class="container">
             <div class="logo">IC ICIDHAI 2026</div>
             <ul>
+                <li><a href="#committees">Committees</a></li>
+                <li><a href="#guidelines">Guidelines</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#details">Details</a></li>
                 <li><a href="#speakers">Speakers</a></li>
@@ -1094,55 +1307,64 @@
     </section>
 
     <!-- Publication Section -->
-    <section class="publication">
+    
+    <!-- Merged Publication Opportunities & Partners Section -->
+    <section class="publication" id="publication">
         <div class="container">
-            <h2>Publication Opportunities</h2>
-            <div class="publication-grid">
-                <div class="publication-cards">
-                    <div class="publication-card">
-                        <h3>📚 ISBN Book Publication</h3>
-                        <p>Basic publication option with easier acceptance criteria. Your research gets published in an ISBN-registered book.</p>
-                        <ul>
-                            <li>Accessible & Professional</li>
-                            <li>International ISBN</li>
-                            <li>Indexed in major databases</li>
-                        </ul>
+            <div class="partners-header">
+                <h2>Publication Opportunities</h2>
+                <p style="margin-top: 1rem; color: var(--text-light); text-align: center;">High-quality research from ICIDHAI 2026 will be published through our prestigious partners.</p>
+            </div>
+            
+            <div class="partners-featured-grid">
+                <!-- Rupkatha Journal -->
+                <div class="partner-card-premium">
+                    <div class="partner-badge">Web of Science</div>
+                    <div class="partner-card-content">
+                        <h3>Rupkatha Journal</h3>
+                        <div class="location">Interdisciplinary Studies in Humanities</div>
+                        <p>A premier open-access, peer-reviewed journal dedicated to the humanities, focusing on digital transformations and interdisciplinary research.</p>
                     </div>
-                    <div class="publication-card">
-                        <h3>🏆 Rupkatha Journal</h3>
-                        <p>International peer-reviewed journal with higher academic value. Enhanced visibility and impact in the academic community.</p>
-                        <ul>
-                            <li>Premium Publication</li>
-                            <li>Global Recognition</li>
-                            <li>Rigorous Review Process</li>
-                        </ul>
+                    <div class="partner-meta">
+                        Indexed in: ESCI (Web of Science)
                     </div>
                 </div>
-                <div class="publication-image">
-                    <svg viewBox="0 0 300 400" style="width: 100%; height: auto;">
-                        <defs>
-                            <linearGradient id="pubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f5f1e8;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#d4a574;stop-opacity:0.5" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="300" height="400" fill="url(#pubGrad)"/>
-                        <!-- Books -->
-                        <rect x="50" y="200" width="60" height="120" fill="#1a2332" rx="3"/>
-                        <text x="80" y="265" font-size="10" fill="#d4a574" text-anchor="middle" font-weight="bold">ISBN</text>
-                        <rect x="120" y="220" width="60" height="100" fill="#2d3e50" rx="3"/>
-                        <text x="150" y="275" font-size="9" fill="#d4a574" text-anchor="middle" font-weight="bold">ACADEMIC</text>
-                        <rect x="190" y="240" width="60" height="80" fill="#1a2332" rx="3"/>
-                        <text x="220" y="285" font-size="8" fill="#d4a574" text-anchor="middle" font-weight="bold">RESEARCH</text>
-                        <!-- Globe -->
-                        <circle cx="150" cy="80" r="50" fill="none" stroke="#1a2332" stroke-width="2"/>
-                        <circle cx="150" cy="80" r="45" fill="#d4a574" opacity="0.3"/>
-                        <path d="M 150 35 Q 170 50 170 80 Q 170 110 150 125 Q 130 110 130 80 Q 130 50 150 35" fill="#1a2332" opacity="0.5"/>
-                    </svg>
+
+                <!-- ALT Literary Press -->
+                <div class="partner-card-premium">
+                    <div class="partner-badge">International Partner</div>
+                    <div class="partner-card-content">
+                        <h3>ALT Literary Press Journal</h3>
+                        <div class="location">United Kingdom (UK)</div>
+                        <p>Renowned British publishing house specializing in contemporary literary studies, linguistics, and the intersection of technology and culture.</p>
+                    </div>
+                    <div class="partner-meta">
+                        Global Distribution & Recognition
+                    </div>
                 </div>
+
+                <!-- ISBN Publication -->
+                <div class="partner-card-premium">
+                    <div class="partner-badge">GNITC / GNES</div>
+                    <div class="partner-card-content">
+                        <h3>Conference Proceedings</h3>
+                        <div class="location">Edited e-Journal Volume</div>
+                        <p>All accepted papers will be compiled into a comprehensive digital volume, serving as a permanent record of the conference's scholarly contributions.</p>
+                    </div>
+                    <div class="partner-meta">
+                        Official ISBN:<br>
+                        <span class="isbn-tag">978-81-685441-9-2</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem; background: var(--accent); padding: 2rem; border-radius: 10px; text-align: center; border: 1px dashed var(--secondary);">
+                <h3 style="color: var(--primary); margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Publication Process</h3>
+                <p style="max-width: 800px; margin: 0 auto; color: var(--text-dark);">All submitted papers will undergo a rigorous peer-review process. Selected high-quality papers will be considered for the Rupkatha Journal (Web of Science), while all other accepted papers will be published in the ISBN-indexed conference proceedings volume.</p>
             </div>
         </div>
     </section>
+
 
         <!-- Key Speakers Section -->
     <section class="speakers" id="speakers">
@@ -1261,7 +1483,7 @@
                 </div>
                 <div class="speaker-card" onclick="window.open('https://scholar.google.com/citations?user=eTIBSdkAAAAJ&hl=en', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=eTIBSdkAAAAJ&citpid=1">
+                        <img src="https://res.cloudinary.com/dysrmfhoa/image/upload/v1777681925/WhatsApp_Image_2026-05-02_at_6.01.43_AM_lztrno.jpg">
                     </div>
                     <div class="speaker-info">
                         <h3>Dr. Hatem Al-Shamea</h3>
@@ -1438,6 +1660,110 @@
     </section>
 
     <!-- Organizing Institutions Section -->
+    
+    <!-- Organizing Committee & Advisory Boards -->
+    <section class="committee-section" id="committees">
+        <div class="container">
+            <h2>Committees & Advisory Boards</h2>
+            
+            <div class="board-card" style="margin-bottom: 2rem; grid-column: 1 / -1;">
+                <h3>Organizing Committee</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h4 style="color: var(--secondary);">CHIEF PATRON</h4>
+                        <p><strong>Sardar Gagandeep Singh Kohli</strong><br>Chancellor, GNU</p>
+                        <p><strong>Dr. H. S. Saini</strong><br>Vice Chancellor, GNU</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--secondary);">PATRON</h4>
+                        <p><strong>Dr. Kalairasan</strong>, Rector, GNU</p>
+                        <p><strong>Dr. S. Sreenatha Reddy</strong>, Director, GNITC</p>
+                        <p><strong>Dr. B. Venkata Ramana Reddy</strong>, Principal, GNIT</p>
+                        <p><strong>Dr. B. Kedarnath</strong>, Assistant Director, GNITC</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--secondary);">CONVENERS</h4>
+                        <p><strong>Dr. Kaniphnath M Kudale</strong>, Associate Professor (ENG), GNITC</p>
+                        <p><strong>Dr. K. Sunitha</strong>, Assistant Professor (ENG), GNITC</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="board-container">
+                <div class="board-card">
+                    <h3>International Advisory Board</h3>
+                    <ul class="board-list">
+                        <li><strong>Prof. Teodora Serban Oprescu</strong>, Head of Department, Bucharest University of Economic Studies, Romania.</li>
+                        <li><strong>Dr. Onder Cakırtas</strong>, Associate Professor, English Literature, Bingol University, Turkey.</li>
+                        <li><strong>Dr. Anton Kurmelev</strong>, Dean of the Higher School of Linguistics, Pedagogy & Psychology, Linguistics University of Nizhny Novgorod, Russia.</li>
+                    </ul>
+                </div>
+                
+                <div class="board-card">
+                    <h3>National Advisory Board</h3>
+                    <ul class="board-list">
+                        <li><strong>Dr. Parvathi Vudumula</strong>, Professor of English, Dept. of Humanities and Social Sciences, JNTU, Hyderabad</li>
+                        <li><strong>Dr. M. Raja Vishwanathan</strong>, Associate Professor, Dept. of Humanities and Social Sciences, NIT Warangal</li>
+                        <li><strong>Dr. Venkatesh Vaditya</strong>, Head and Associate Professor, Dept. of Cultural Studies, The English & Foreign Languages University, Hyderabad.</li>
+                        <li><strong>Dr. Krishna Chaitanya Reddy Edunuru</strong>, Associate Professor, Dept. of English at the Central University of Kashmir.</li>
+                        <li><strong>Dr. Konda Nageswara Rao</strong>, Professor & Director, Osmania University, Hyderabad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submission Guidelines & Policy -->
+    <section class="guidelines-section" id="guidelines" style="padding: 4rem 0;">
+        <div class="container">
+            <h2>Submission & Policies</h2>
+            <div class="guidelines-grid">
+                <div class="guideline-card">
+                    <h3>Submission Guidelines</h3>
+                    <ul class="guideline-list">
+                        <li>The paper must be original and unpublished work.</li>
+                        <li>Abstract Word limit: 300 words along with keywords.</li>
+                        <li>Paper Word Limit: 4000 - 5000 words.</li>
+                        <li>The paper should adhere to the MLA 9th edition in its entirety.</li>
+                        <li>Selection confirmed after review committee approval.</li>
+                        <li>Selected presenters will receive a separate registration link.</li>
+                    </ul>
+                </div>
+                
+                <div class="guideline-card" style="background: var(--accent); color: var(--text-dark); border: 1px solid var(--border);">
+                    <h3 style="color: var(--primary);">Plagiarism Policy</h3>
+                    <ul class="guideline-list">
+                        <li>All submitted papers will be reviewed by the conference committee.</li>
+                        <li>Similarity index check will be performed for all submissions.</li>
+                        <li>All papers will be published with ISBN.</li>
+                        <li>High-quality papers considered for Web of Science journals.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section class="venue-section" style="padding: 4rem 0; background: white;">
+        <div class="container">
+            <h2>Venue</h2>
+            <div style="background: var(--accent); padding: 3rem; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">GURU NANAK INSTITUTIONS TECHNICAL CAMPUS</h3>
+                <p style="font-size: 1.2rem; color: var(--text-dark);">Ibrahimpatnam, Hyderabad.</p>
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+                    <div style="background: white; padding: 1rem 2rem; border-radius: 10px; border-top: 3px solid var(--secondary);">
+                        <p style="font-weight: bold; color: var(--primary);">📍 Distance from City</p>
+                        <p>28 km from Hyderabad</p>
+                    </div>
+                    <div style="background: white; padding: 1rem 2rem; border-radius: 10px; border-top: 3px solid var(--secondary);">
+                        <p style="font-weight: bold; color: var(--primary);">✈️ Distance from Airport</p>
+                        <p>26 km from RGI Airport</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="institutions">
         <div class="container">
             <h2>Organizing Institutions</h2>
@@ -1496,6 +1822,9 @@
         </div>
     </section>
 
+    
+    
+
     <footer>
         <p>&copy; 2026 ICIDHAI - International Conference on Innovations in Digital Humanities through AI</p>
         <p>Organized by GNITC, GNU & GNIT</p>
@@ -1537,4 +1866,5 @@
     </script>
 </body>
 </html>
+
 
