@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICIDHAI 2026 - International Conference on Innovations in Digital Humanities through AI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,34 +16,27 @@
             --primary: #0f1e2e;
             --secondary: #d4a574;
             --accent: #f5f1e8;
-            --text-dark: #1a1a1a;
-            --text-light: #666666;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
             --border: #e0d5c7;
-            --white: #ffffff;
-            --success: #10b981;
-            --danger: #ef4444;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --dark-blue: #0a1219;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
-            background-color: var(--white);
-            overflow-x: hidden;
+            background-color: var(--accent);
         }
 
-        /* ===== NAVIGATION ===== */
+        /* Navigation */
         nav {
-            background-color: rgba(15, 30, 46, 0.98);
+            background-color: rgba(15, 30, 46, 0.95);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             backdrop-filter: blur(10px);
         }
 
@@ -58,41 +51,25 @@
 
         nav .logo {
             color: var(--secondary);
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
             font-family: 'Playfair Display', serif;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
 
         nav a {
-            color: rgba(255, 255, 255, 0.9);
+            color: white;
             text-decoration: none;
+            transition: color 0.3s;
             font-size: 0.95rem;
             font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
         }
 
         nav a:hover {
@@ -102,18 +79,18 @@
         .nav-register {
             background-color: var(--secondary);
             color: var(--primary);
-            padding: 0.7rem 1.8rem;
-            border-radius: 50px;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
             font-weight: 600;
             cursor: pointer;
-            border: 2px solid var(--secondary);
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
+            border: none;
+            transition: all 0.3s;
         }
 
         .nav-register:hover {
             background-color: transparent;
             color: var(--secondary);
+            border: 2px solid var(--secondary);
         }
 
         .container {
@@ -122,33 +99,22 @@
             padding: 0 2rem;
         }
 
-        /* ===== HERO SECTION ===== */
+        /* HERO SECTION - IMPROVED LAYOUT */
         .hero {
-            background: linear-gradient(135deg, #0f1e2e 0%, #1a2f45 50%, #0f1e2e 100%);
+            background: linear-gradient(135deg, #0f1e2e 0%, #0a1219 50%, #0f1e2e 100%);
             position: relative;
             overflow: hidden;
-            min-height: 750px;
+            min-height: 700px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 5rem 2rem;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
+            padding: 4rem 2rem;
         }
 
         .hero-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
             max-width: 1400px;
             width: 100%;
@@ -156,6 +122,7 @@
             z-index: 10;
         }
 
+        /* LEFT SIDE - TEXT CONTENT */
         .hero-content {
             color: white;
             animation: fadeInLeft 0.8s ease-out;
@@ -164,7 +131,7 @@
         @keyframes fadeInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-40px);
+                transform: translateX(-30px);
             }
             to {
                 opacity: 1;
@@ -173,42 +140,42 @@
         }
 
         .hero-date {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--secondary);
             font-weight: 600;
-            letter-spacing: 1.5px;
-            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
             text-transform: uppercase;
         }
 
         .hero-title {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-family: 'Playfair Display', serif;
             letter-spacing: -1px;
             line-height: 1.1;
         }
 
         .hero-subtitle {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--secondary);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 600;
             font-family: 'Playfair Display', serif;
             line-height: 1.3;
         }
 
         .hero-description {
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
             line-height: 1.8;
-            color: rgba(255, 255, 255, 0.95);
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .hero-buttons {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
             animation: fadeInUp 0.8s ease-out 0.3s both;
         }
@@ -216,7 +183,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -226,15 +193,14 @@
 
         .btn {
             display: inline-block;
-            padding: 1.1rem 2.8rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             cursor: pointer;
             border: 2px solid var(--secondary);
             text-decoration: none;
             font-size: 1rem;
-            text-align: center;
         }
 
         .btn-primary {
@@ -245,8 +211,8 @@
         .btn-primary:hover {
             background-color: transparent;
             color: var(--secondary);
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
         }
 
         .btn-secondary {
@@ -257,10 +223,11 @@
         .btn-secondary:hover {
             background-color: var(--secondary);
             color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
         }
 
+        /* RIGHT SIDE - BACKGROUND SVG */
         .hero-background-container {
             position: relative;
             height: 500px;
@@ -270,7 +237,7 @@
         @keyframes fadeInRight {
             from {
                 opacity: 0;
-                transform: translateX(40px);
+                transform: translateX(30px);
             }
             to {
                 opacity: 1;
@@ -283,18 +250,18 @@
             height: 100%;
         }
 
-        /* ===== SECTIONS ===== */
+        /* Sections */
         section {
-            padding: 6rem 2rem;
+            padding: 5rem 2rem;
         }
 
         section h2 {
-            font-size: 3rem;
-            margin-bottom: 4rem;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
             text-align: center;
             color: var(--primary);
             position: relative;
-            padding-bottom: 2rem;
+            padding-bottom: 1.5rem;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
         }
@@ -305,14 +272,14 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
+            width: 100px;
+            height: 4px;
             background: linear-gradient(90deg, transparent, var(--secondary), transparent);
         }
 
-        /* ===== ABOUT SECTION ===== */
+        /* About Section */
         .about {
-            background-color: var(--white);
+            background-color: white;
         }
 
         .about-content {
@@ -323,15 +290,15 @@
         }
 
         .about-text h3 {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--primary);
             font-family: 'Playfair Display', serif;
             font-weight: 700;
         }
 
         .about-text p {
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
             color: var(--text-light);
             line-height: 1.9;
             font-size: 1.05rem;
@@ -339,16 +306,15 @@
 
         .about-text ul {
             list-style: none;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .about-text li {
-            padding: 1rem 0;
-            padding-left: 2.5rem;
+            padding: 0.8rem 0;
+            padding-left: 2rem;
             position: relative;
             color: var(--text-light);
             line-height: 1.8;
-            font-size: 1rem;
         }
 
         .about-text li::before {
@@ -357,177 +323,157 @@
             left: 0;
             color: var(--secondary);
             font-weight: bold;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .about-image img {
             max-width: 100%;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
         }
 
-        /* ===== DETAILS SECTION ===== */
+        /* Details Section */
         .details {
-            background: linear-gradient(135deg, var(--accent) 0%, #faf8f3 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #f0e8d8 100%);
         }
 
         .details-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .detail-card {
-            background: var(--white);
+            background: white;
             padding: 2.5rem;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
             border-top: 4px solid var(--secondary);
         }
 
         .detail-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
         .detail-card h3 {
             color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
         }
 
         .detail-card p {
             color: var(--text-light);
-            font-size: 1.1rem;
-            font-weight: 500;
+            font-size: 1.05rem;
         }
 
-        /* ===== PUBLICATION SECTION ===== */
+        /* Publication Section */
         .publication {
-            background-color: var(--white);
+            background-color: white;
         }
 
-        .partners-featured-grid {
+        .publication-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             margin-top: 3rem;
+            align-items: center;
         }
 
-        .partner-card-premium {
-            background: var(--white);
+        .publication-cards {
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .publication-card {
+            background: linear-gradient(135deg, var(--primary) 0%, #2d3e50 100%);
+            color: white;
+            padding: 3rem;
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(212, 165, 116, 0.15);
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            border-left: 5px solid var(--secondary);
         }
 
-        .partner-card-premium:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 24px 48px rgba(212, 165, 116, 0.2);
-            border-color: var(--secondary);
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
-        .partner-badge {
-            background: var(--primary);
-            color: var(--secondary);
-            padding: 0.8rem 1.5rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            align-self: flex-start;
-        }
-
-        .partner-card-content {
-            padding: 2.5rem;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .partner-card-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--primary);
+        .publication-card h3 {
+            font-size: 1.6rem;
             margin-bottom: 1rem;
+            color: var(--secondary);
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
         }
 
-        .partner-card-content .location {
+        .publication-card p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .publication-card ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .publication-card li {
+            padding: 0.6rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .publication-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
             color: var(--secondary);
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
+            font-weight: bold;
         }
 
-        .partner-card-content p {
-            color: var(--text-light);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
+        .publication-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
         }
 
-        .partner-meta {
-            background: var(--accent);
-            padding: 1.2rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--primary);
-            border-top: 1px solid rgba(212, 165, 116, 0.1);
-        }
-
-        .isbn-tag {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-family: monospace;
-            margin-top: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* ===== SPEAKERS SECTION ===== */
+        /* Speakers Section */
         .speakers {
-            background: linear-gradient(135deg, var(--accent) 0%, #faf8f3 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #f0e8d8 100%);
         }
 
         .speakers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .speaker-card {
-            background: var(--white);
+            background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
         }
 
         .speaker-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
         .speaker-photo {
             width: 100%;
-            height: 220px;
+            height: 200px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             display: flex;
             align-items: center;
@@ -545,34 +491,33 @@
         }
 
         .speaker-info {
-            padding: 1.8rem;
+            padding: 1.5rem;
             text-align: center;
         }
 
         .speaker-info h3 {
             color: var(--primary);
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
         }
 
         .speaker-info .designation {
             color: var(--secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
         .speaker-info .affiliation {
             color: var(--text-light);
             font-size: 0.85rem;
-            line-height: 1.5;
         }
 
-        /* ===== OBJECTIVES SECTION ===== */
+        /* Objectives Section */
         .objectives {
-            background-color: var(--white);
+            background-color: white;
         }
 
         .objectives-grid {
@@ -587,60 +532,59 @@
             padding: 2.5rem;
             border-radius: 12px;
             border-left: 5px solid var(--secondary);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
         }
 
         .objective-card:hover {
-            transform: translateX(8px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         .objective-card h3 {
             color: var(--primary);
-            margin-bottom: 1.2rem;
-            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
         }
 
         .objective-card p {
             color: var(--text-light);
-            line-height: 1.8;
-            font-size: 1rem;
+            line-height: 1.7;
         }
 
-        /* ===== THEMES SECTION ===== */
+        /* Themes Section */
         .themes {
-            background: linear-gradient(135deg, var(--accent) 0%, #faf8f3 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #f0e8d8 100%);
         }
 
         .themes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 3rem;
         }
 
         .theme-item {
-            background: var(--white);
-            padding: 1.8rem;
+            background: white;
+            padding: 1.5rem;
             border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            gap: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
         }
 
         .theme-item:hover {
             transform: translateX(8px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .theme-arrow {
             color: var(--secondary);
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             flex-shrink: 0;
         }
@@ -648,20 +592,19 @@
         .theme-item p {
             color: var(--text-dark);
             font-weight: 500;
-            font-size: 1rem;
         }
 
-        /* ===== FEES SECTION ===== */
+        /* Fees Section */
         .fees {
-            background-color: var(--white);
+            background-color: white;
         }
 
         .fees-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 2.5rem;
-            background: var(--white);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             border-radius: 8px;
             overflow: hidden;
         }
@@ -673,7 +616,7 @@
 
         .fees-table th,
         .fees-table td {
-            padding: 1.5rem;
+            padding: 1.3rem;
             text-align: left;
             border-bottom: 1px solid var(--border);
             font-size: 0.95rem;
@@ -690,23 +633,21 @@
 
         .fees-table td {
             color: var(--text-dark);
-            font-weight: 500;
         }
 
         .fees-notes {
-            margin-top: 3rem;
+            margin-top: 2.5rem;
             background: var(--accent);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 8px;
             border-left: 5px solid var(--secondary);
         }
 
         .fees-notes h3 {
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 1.3rem;
         }
 
         .fees-notes ul {
@@ -715,11 +656,10 @@
         }
 
         .fees-notes li {
-            padding: 0.8rem 0;
-            padding-left: 1.8rem;
+            padding: 0.6rem 0;
+            padding-left: 1.5rem;
             position: relative;
             color: var(--text-light);
-            font-size: 1rem;
         }
 
         .fees-notes li::before {
@@ -728,150 +668,52 @@
             left: 0;
             color: var(--secondary);
             font-weight: bold;
-            font-size: 1.2rem;
         }
 
-        /* ===== DATES SECTION ===== */
+        /* Important Dates */
         .dates-section {
-            background: linear-gradient(135deg, var(--accent) 0%, #faf8f3 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #f0e8d8 100%);
         }
 
         .dates-timeline {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .date-item {
-            background: var(--white);
+            background: white;
             padding: 2.5rem;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             border-top: 5px solid var(--secondary);
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         .date-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
         }
 
         .date-item .date {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             font-family: 'Playfair Display', serif;
         }
 
         .date-item .event {
             color: var(--primary);
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
-        /* ===== COMMITTEE SECTION ===== */
-        .committee-section {
-            background-color: var(--accent);
-            padding: 5rem 0;
-        }
-
-        .board-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            margin-top: 2.5rem;
-        }
-
-        .board-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            border-left: 5px solid var(--secondary);
-        }
-
-        .board-card h3 {
-            color: var(--primary);
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 1rem;
-            font-size: 1.3rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        .board-list {
-            list-style: none;
-        }
-
-        .board-list li {
-            margin-bottom: 1.2rem;
-            padding-left: 1.8rem;
-            position: relative;
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .board-list li::before {
-            content: "•";
-            color: var(--secondary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
-        }
-
-        /* ===== GUIDELINES SECTION ===== */
-        .guidelines-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            margin-top: 2.5rem;
-        }
-
-        .guideline-card {
-            background: var(--primary);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        .guideline-card h3 {
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        .guideline-list {
-            list-style: none;
-        }
-
-        .guideline-list li {
-            margin-bottom: 1rem;
-            padding-left: 1.8rem;
-            position: relative;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .guideline-list li::before {
-            content: "→";
-            color: var(--secondary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* ===== INSTITUTIONS SECTION ===== */
+        /* Organizing Institutions */
         .institutions {
-            background-color: var(--white);
+            background-color: white;
         }
 
         .institutions-grid {
@@ -885,20 +727,20 @@
             background: linear-gradient(135deg, var(--primary) 0%, #2d3e50 100%);
             color: white;
             padding: 2.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s;
         }
 
         .institution-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
         .institution-card h3 {
             font-size: 1.6rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: var(--secondary);
             font-family: 'Playfair Display', serif;
             font-weight: 700;
@@ -906,13 +748,13 @@
 
         .institution-card p {
             font-size: 1rem;
-            opacity: 0.95;
+            opacity: 0.9;
             line-height: 1.6;
         }
 
-        /* ===== CONTACT SECTION ===== */
+        /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, var(--accent) 0%, #faf8f3 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #f0e8d8 100%);
         }
 
         .contact-content {
@@ -926,19 +768,19 @@
             background: linear-gradient(135deg, var(--primary) 0%, #2d3e50 100%);
             color: white;
             padding: 2.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s;
         }
 
         .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
         .contact-card h3 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--secondary);
             font-family: 'Playfair Display', serif;
             font-weight: 700;
@@ -946,14 +788,13 @@
         }
 
         .contact-card p {
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .contact-card a {
             color: var(--secondary);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
             font-weight: 600;
         }
 
@@ -961,7 +802,7 @@
             color: white;
         }
 
-        /* ===== REGISTER SECTION ===== */
+        /* Register Section */
         .register-section {
             background: linear-gradient(135deg, var(--primary) 0%, #2d3e50 100%);
             color: white;
@@ -973,55 +814,33 @@
 
         .register-section p {
             text-align: center;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 2.5rem;
-            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
         .register-button-container {
             text-align: center;
         }
 
-        .register-qr {
-            background: var(--accent);
-            padding: 2.5rem;
-            border-radius: 8px;
-            border: 2px dashed var(--secondary);
-            margin-top: 2.5rem;
-            display: inline-block;
-        }
-
-        .register-qr img {
-            width: 250px;
-            height: 250px;
-            border-radius: 4px;
-        }
-
-        .register-qr p {
-            margin-top: 1.5rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* ===== FOOTER ===== */
+        /* Footer */
         footer {
             background-color: var(--primary);
             color: white;
             text-align: center;
-            padding: 3.5rem 2rem;
+            padding: 3rem 2rem;
             border-top: 3px solid var(--secondary);
         }
 
         footer p {
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* Responsive */
         @media (max-width: 1024px) {
             .hero-wrapper {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 2rem;
             }
 
             .hero-background-container {
@@ -1029,62 +848,44 @@
             }
 
             .hero-title {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
 
             .hero-subtitle {
-                font-size: 1.5rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .board-container,
-            .guidelines-grid {
-                grid-template-columns: 1fr;
+                font-size: 1.4rem;
             }
         }
 
         @media (max-width: 768px) {
             nav ul {
-                gap: 1rem;
+                gap: 0.8rem;
                 font-size: 0.85rem;
             }
 
             .hero {
                 min-height: auto;
-                padding: 3rem 1rem;
+                padding: 2rem;
             }
 
             .hero-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
             .hero-description {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
-            .hero-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            section {
-                padding: 4rem 1rem;
+            .about-content,
+            .publication-grid {
+                grid-template-columns: 1fr;
             }
 
             section h2 {
-                font-size: 2.2rem;
-                margin-bottom: 2.5rem;
+                font-size: 2rem;
             }
 
             .speakers-grid {
@@ -1106,42 +907,243 @@
             .institutions-grid {
                 grid-template-columns: 1fr;
             }
+        }
+    
+        /* Committee and Board Sections */
+        .committee-section {
+            background-color: var(--accent);
+            padding: 4rem 0;
+        }
+        
+        .board-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .board-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .board-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        
+        .board-list {
+            list-style: none;
+        }
+        
+        .board-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .board-list li::before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Guidelines and Policy */
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .guideline-card {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .guideline-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .guideline-list {
+            list-style: none;
+        }
+        
+        .guideline-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .guideline-list li::before {
+            content: "→";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+        }
 
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
+        /* Redesigned Publishing Partners */
+        .partners-section {
+            background: linear-gradient(to bottom, #ffffff, var(--accent));
+            padding: 5rem 0;
+        }
+        
+        .partners-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .partners-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .partners-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .partners-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .partners-featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 0 1rem;
+        }
+        
+        .partner-card-premium {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .partner-card-premium:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(212, 165, 116, 0.15);
+            border-color: var(--secondary);
+        }
+        
+        .partner-badge {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 8px 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            align-self: flex-start;
+            border-bottom-right-radius: 15px;
+        }
+        
+        .partner-card-content {
+            padding: 2.5rem;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .partner-card-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .partner-card-content .location {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        .partner-card-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .partner-meta {
+            background: var(--accent);
+            padding: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            border-top: 1px solid rgba(212, 165, 116, 0.1);
+        }
+        
+        .isbn-tag {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin-top: 5px;
+        }
 
-            .details-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .partners-featured-grid {
+        @media (max-width: 768px) {
+            .board-container, .guidelines-grid {
                 grid-template-columns: 1fr;
             }
         }
+
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">ICIDHAI 2026</div>
+            <div class="logo">IC ICIDHAI 2026</div>
             <ul>
+                <li><a href="#committees">Committees</a></li>
+                <li><a href="#guidelines">Guidelines</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#details">Details</a></li>
                 <li><a href="#speakers">Speakers</a></li>
-                <li><a href="#themes">Themes</a></li>
                 <li><a href="#fees">Fees</a></li>
-                <li><a href="#committees">Committees</a></li>
+                <li><a href="#themes">Themes</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><button class="nav-register" onclick="document.getElementById('register-form').scrollIntoView({behavior: 'smooth'})">Register</button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - IMPROVED LAYOUT -->
     <section class="hero" id="home">
         <div class="hero-wrapper">
+            <!-- LEFT SIDE - TEXT CONTENT (CLEAR & READABLE) -->
             <div class="hero-content">
                 <div class="hero-date">31 July - 1 August 2026</div>
                 <h1 class="hero-title">ICIDHAI 2026</h1>
@@ -1153,6 +1155,7 @@
                 </div>
             </div>
 
+            <!-- RIGHT SIDE - BACKGROUND SVG (BEAUTIFUL DESIGN) -->
             <div class="hero-background-container">
                 <svg class="hero-background" viewBox="0 0 500 600" preserveAspectRatio="xMidYMid meet">
                     <defs>
@@ -1169,49 +1172,63 @@
                         </filter>
                     </defs>
 
+                    <!-- Background -->
+                    <rect width="500" height="600" fill="#0f1e2e" opacity="0"/>
+
+                    <!-- Central AI Circle with glow -->
                     <circle cx="250" cy="300" r="80" fill="none" stroke="#d4a574" stroke-width="2" opacity="0.5"/>
                     <circle cx="250" cy="300" r="70" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.3"/>
                     <circle cx="250" cy="300" r="60" fill="none" stroke="#d4a574" stroke-width="2" opacity="0.6"/>
                     
+                    <!-- Inner glow -->
                     <circle cx="250" cy="300" r="50" fill="url(#glowGradient)" filter="url(#glow)"/>
                     <circle cx="250" cy="300" r="45" fill="#0f1e2e"/>
                     <text x="250" y="320" font-size="48" fill="#d4a574" text-anchor="middle" font-weight="bold" font-family="'Playfair Display', serif">AI</text>
 
+                    <!-- Network nodes and connections -->
+                    <!-- Research (top-left) -->
                     <circle cx="120" cy="100" r="35" fill="none" stroke="#d4a574" stroke-width="2" opacity="0.7"/>
                     <circle cx="120" cy="100" r="30" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.4"/>
                     <text x="120" y="110" font-size="20" fill="#d4a574" text-anchor="middle" font-weight="bold">🏛️</text>
                     <text x="120" y="150" font-size="11" fill="#d4a574" text-anchor="middle" font-weight="600">RESEARCH</text>
 
+                    <!-- Literature (left) -->
                     <circle cx="50" cy="300" r="35" fill="none" stroke="#d4a574" stroke-width="2" opacity="0.7"/>
                     <circle cx="50" cy="300" r="30" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.4"/>
                     <text x="50" y="310" font-size="20" fill="#d4a574" text-anchor="middle" font-weight="bold">📖</text>
                     <text x="50" y="350" font-size="11" fill="#d4a574" text-anchor="middle" font-weight="600">LITERATURE</text>
 
+                    <!-- History (bottom-left) -->
                     <circle cx="120" cy="500" r="35" fill="none" stroke="#d4a574" stroke-width="2" opacity="0.7"/>
                     <circle cx="120" cy="500" r="30" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.4"/>
                     <text x="120" y="510" font-size="20" fill="#d4a574" text-anchor="middle" font-weight="bold">🪶</text>
                     <text x="120" y="550" font-size="11" fill="#d4a574" text-anchor="middle" font-weight="600">HISTORY</text>
 
+                    <!-- Collaboration (bottom) -->
                     <circle cx="250" cy="570" r="35" fill="none" stroke="#d4a574" stroke-width="2" opacity="0.7"/>
                     <circle cx="250" cy="570" r="30" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.4"/>
                     <text x="250" y="580" font-size="20" fill="#d4a574" text-anchor="middle" font-weight="bold">👥</text>
                     <text x="250" y="600" font-size="11" fill="#d4a574" text-anchor="middle" font-weight="600">COLLABORATION</text>
 
+                    <!-- Data (right) -->
                     <circle cx="450" cy="300" r="35" fill="none" stroke="#d4a574" stroke-width="2" opacity="0.7"/>
                     <circle cx="450" cy="300" r="30" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.4"/>
                     <text x="450" y="310" font-size="20" fill="#d4a574" text-anchor="middle" font-weight="bold">🔗</text>
                     <text x="450" y="350" font-size="11" fill="#d4a574" text-anchor="middle" font-weight="600">DATA</text>
 
+                    <!-- Language (top-right) -->
                     <circle cx="380" cy="100" r="35" fill="none" stroke="#d4a574" stroke-width="2" opacity="0.7"/>
                     <circle cx="380" cy="100" r="30" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.4"/>
                     <text x="380" y="110" font-size="20" fill="#d4a574" text-anchor="middle" font-weight="bold">🔤</text>
                     <text x="380" y="150" font-size="11" fill="#d4a574" text-anchor="middle" font-weight="600">LANGUAGE</text>
 
+                    <!-- Knowledge (right-bottom) -->
                     <circle cx="380" cy="500" r="35" fill="none" stroke="#d4a574" stroke-width="2" opacity="0.7"/>
                     <circle cx="380" cy="500" r="30" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.4"/>
                     <text x="380" y="510" font-size="20" fill="#d4a574" text-anchor="middle" font-weight="bold">🧠</text>
                     <text x="380" y="550" font-size="11" fill="#d4a574" text-anchor="middle" font-weight="600">KNOWLEDGE</text>
 
+                    <!-- Connection lines -->
                     <line x1="250" y1="300" x2="120" y2="100" stroke="#d4a574" stroke-width="1" opacity="0.4" stroke-dasharray="5,5"/>
                     <line x1="250" y1="300" x2="50" y2="300" stroke="#d4a574" stroke-width="1" opacity="0.4" stroke-dasharray="5,5"/>
                     <line x1="250" y1="300" x2="120" y2="500" stroke="#d4a574" stroke-width="1" opacity="0.4" stroke-dasharray="5,5"/>
@@ -1220,6 +1237,7 @@
                     <line x1="250" y1="300" x2="380" y2="100" stroke="#d4a574" stroke-width="1" opacity="0.4" stroke-dasharray="5,5"/>
                     <line x1="250" y1="300" x2="380" y2="500" stroke="#d4a574" stroke-width="1" opacity="0.4" stroke-dasharray="5,5"/>
 
+                    <!-- Connecting dots on lines -->
                     <circle cx="185" cy="200" r="4" fill="#d4a574" opacity="0.6"/>
                     <circle cx="150" cy="300" r="4" fill="#d4a574" opacity="0.6"/>
                     <circle cx="185" cy="400" r="4" fill="#d4a574" opacity="0.6"/>
@@ -1227,6 +1245,12 @@
                     <circle cx="315" cy="300" r="4" fill="#d4a574" opacity="0.6"/>
                     <circle cx="315" cy="200" r="4" fill="#d4a574" opacity="0.6"/>
                     <circle cx="315" cy="400" r="4" fill="#d4a574" opacity="0.6"/>
+
+                    <!-- Decorative dots and squares -->
+                    <circle cx="30" cy="150" r="3" fill="#d4a574" opacity="0.4"/>
+                    <circle cx="60" cy="80" r="2" fill="#d4a574" opacity="0.3"/>
+                    <circle cx="470" cy="400" r="3" fill="#d4a574" opacity="0.4"/>
+                    <circle cx="480" cy="150" r="2" fill="#d4a574" opacity="0.3"/>
                 </svg>
             </div>
         </div>
@@ -1240,7 +1264,7 @@
                 <div class="about-text">
                     <h3>What is ICIDHAI?</h3>
                     <p>ICIDHAI 2026 aims to critically examine the transformative impact of artificial intelligence on language, literature, and cultural studies. It provides a global platform for scholars, researchers, and practitioners to engage in interdisciplinary dialogue bridging humanities and computational sciences.</p>
-                    <p>The conference explores how artificial intelligence is reshaping literary and linguistic studies while fostering interdisciplinary collaboration between scholars in the humanities and computational fields.</p>
+                    <p>The conference explores how artificial intelligence is reshaping literary and linguistic studies while fostering interdisciplinary collaboration between scholars in the humanities and computational fields. It seeks to explore emerging computational research methodologies and critically address issues of authorship, originality, and ethics in technology-assisted scholarship.</p>
                 </div>
                 <div class="about-text">
                     <h3>Why Attend?</h3>
@@ -1283,12 +1307,17 @@
     </section>
 
     <!-- Publication Section -->
+    
+    <!-- Merged Publication Opportunities & Partners Section -->
     <section class="publication" id="publication">
         <div class="container">
-            <h2>Publication Opportunities</h2>
-            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.05rem;">High-quality research from ICIDHAI 2026 will be published through our prestigious partners.</p>
+            <div class="partners-header">
+                <h2>Publication Opportunities</h2>
+                <p style="margin-top: 1rem; color: var(--text-light); text-align: center;">High-quality research from ICIDHAI 2026 will be published through our prestigious partners.</p>
+            </div>
             
             <div class="partners-featured-grid">
+                <!-- Rupkatha Journal -->
                 <div class="partner-card-premium">
                     <div class="partner-badge">Web of Science</div>
                     <div class="partner-card-content">
@@ -1301,6 +1330,7 @@
                     </div>
                 </div>
 
+                <!-- ALT Literary Press -->
                 <div class="partner-card-premium">
                     <div class="partner-badge">International Partner</div>
                     <div class="partner-card-content">
@@ -1313,8 +1343,9 @@
                     </div>
                 </div>
 
+                <!-- ISBN Publication -->
                 <div class="partner-card-premium">
-                    <div class="partner-badge">ISBN GNITC</div>
+                    <div class="partner-badge"> ISBN GNITC </div>
                     <div class="partner-card-content">
                         <h3>Conference Proceedings</h3>
                         <div class="location">Edited e-Journal Volume</div>
@@ -1326,105 +1357,103 @@
                     </div>
                 </div>
             </div>
+
+            <div style="margin-top: 4rem; background: var(--accent); padding: 2rem; border-radius: 10px; text-align: center; border: 1px dashed var(--secondary);">
+                <h3 style="color: var(--primary); margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Publication Process</h3>
+                <p style="max-width: 800px; margin: 0 auto; color: var(--text-dark);">All submitted papers will undergo a rigorous peer-review process. Selected high-quality papers will be considered for the Rupkatha Journal (Web of Science), while all other accepted papers will be published in the ISBN-indexed conference proceedings volume.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Speakers Section -->
+
+        <!-- Key Speakers Section -->
     <section class="speakers" id="speakers">
         <div class="container">
             <h2>Key Note Speakers</h2>
             <div class="speakers-grid">
-                <div class="speaker-card" onclick="window.open('https://home.iitk.ac.in/~trc/', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://home.iitk.ac.in/~trc/', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://www.iitk.ac.in/data/media/faculty/t-ravichandran.jpg" alt="Prof. Dr. T. Ravi Chandran" onerror="this.src='https://via.placeholder.com/200x200?text=Prof.+Dr.+T.+Ravi+Chandran'">
+                        <img src="https://www.iitk.ac.in/data/media/faculty/t-ravichandran.jpg" onerror="this.src='https://via.placeholder.com/200x200?text=Prof.+Dr.+T.+Ravi+Chandran'">
                     </div>
                     <div class="speaker-info">
-                        <h3>Prof. Dr. T. Ravi Chandran</h3>
+<h3>Prof. Dr. T. Ravi Chandran</h3>
                         <div class="designation">Professor of English</div>
                         <div class="affiliation">Dept. of Humanities & Sciences, IIT Kanpur, India</div>
                     </div>
                 </div>
-
-                <div class="speaker-card" onclick="window.open('https://unipune.irins.org/profile/636488', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://unipune.irins.org/profile/636488', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://res.cloudinary.com/dysrmfhoa/image/upload/v1777682809/WhatsApp_Image_2026-05-02_at_6.16.25_AM_gikb3r.jpg" alt="Prof. Chandrani Chatterjee">
+                        <img src="https://res.cloudinary.com/dysrmfhoa/image/upload/v1777682809/WhatsApp_Image_2026-05-02_at_6.16.25_AM_gikb3r.jpg">
                     </div>
                     <div class="speaker-info">
-                        <h3>Prof. Chandrani Chatterjee</h3>
+<h3>Prof. Chandrani Chatterjee</h3>
                         <div class="designation">Professor & Head</div>
                         <div class="affiliation">Department of English, Savitribai Phule Pune University</div>
                     </div>
                 </div>
-
-                <div class="speaker-card" onclick="window.open('https://scholar.google.com/scholar?q=Darshana+Samaraweera+NIE+Sri+Lanka', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://scholar.google.com/scholar?q=Darshana+Samaraweera+NIE+Sri+Lanka', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://0.academia-photos.com/1804607/1020545/1275604/s200_darshana.samaraweera.jpg" alt="Dr. Darshana Samaraweera" onerror="this.src='https://via.placeholder.com/200x200?text=Dr.+Darshana+Samaraweera'">
+                        <img src="https://0.academia-photos.com/1804607/1020545/1275604/s200_darshana.samaraweera.jpg" onerror="this.src='https://via.placeholder.com/200x200?text=Dr.+Darshana+Samaraweera'">
                     </div>
                     <div class="speaker-info">
-                        <h3>Dr. Darshana Samaraweera</h3>
+<h3>Dr. Darshana Samaraweera</h3>
                         <div class="designation">Professor</div>
                         <div class="affiliation">Deputy Director General, NIE Sri Lanka</div>
                     </div>
                 </div>
-
-                <div class="speaker-card" onclick="window.open('https://scholar.google.com/scholar?q=Dana+Radler+Bucharest+University', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://scholar.google.com/scholar?q=Dana+Radler+Bucharest+University', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://0.academia-photos.com/949932/2827628/167701089/s200_dana.radler.jpg" alt="Dr. Dana Radler" onerror="this.src='https://via.placeholder.com/200x200?text=Dr.+Dana+Radler'">
+                        <img src="https://0.academia-photos.com/949932/2827628/167701089/s200_dana.radler.jpg" onerror="this.src='https://via.placeholder.com/200x200?text=Dr.+Dana+Radler'">
                     </div>
                     <div class="speaker-info">
-                        <h3>Dr. Dana Radler</h3>
+<h3>Dr. Dana Radler</h3>
                         <div class="designation">Assistant Professor</div>
                         <div class="affiliation">Department of Modern Languages and Business Communication, Bucharest University of Economic Studies, Romania</div>
                     </div>
                 </div>
-
-                <div class="speaker-card" onclick="window.open('https://www.efluniversity.ac.in/Prof.SonbaMSalve.php', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://www.efluniversity.ac.in/Prof.SonbaMSalve.php', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://www.efluniversity.ac.in/teachingstaff/Prof.SonbaMSalve.jpg" alt="Prof. Sonba M Salve" onerror="this.src='https://via.placeholder.com/200x200?text=Prof.+Sonba+M+Salve'">
+                        <img src="https://www.efluniversity.ac.in/teachingstaff/Prof.SonbaMSalve.jpg" onerror="this.src='https://via.placeholder.com/200x200?text=Prof.+Sonba+M+Salve'">
                     </div>
                     <div class="speaker-info">
-                        <h3>Prof. Sonba M Salve</h3>
+<h3>Prof. Sonba M Salve</h3>
                         <div class="designation">Professor of English & Dean</div>
                         <div class="affiliation">The School of Literary Studies, The English & Foreign Languages University, Hyderabad.</div>
                     </div>
                 </div>
-
-                <div class="speaker-card" onclick="window.open('https://rupkatha.com/tarun_tapas_mukherjee.php', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://rupkatha.com/tarun_tapas_mukherjee.php', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_n3sAJH8Vxxy6w2ZBs_6RpTywl6smA8pDy4Hl2_9SCr2ZY=s160-c-k-c0x00ffffff-no-rj" alt="Dr. Tarun Tapas Mukherjee">
+                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_n3sAJH8Vxxy6w2ZBs_6RpTywl6smA8pDy4Hl2_9SCr2ZY=s160-c-k-c0x00ffffff-no-rj">
                     </div>
                     <div class="speaker-info">
-                        <h3>Dr. Tarun Tapas Mukherjee</h3>
+<h3>Dr. Tarun Tapas Mukherjee</h3>
                         <div class="designation">Associate Professor</div>
                         <div class="affiliation">Bhatter College, Dantan (Autonomous)</div>
                     </div>
                 </div>
-
-                <div class="speaker-card" onclick="window.open('https://scholar.google.com/citations?user=uZMihoYAAAAJ&hl=en', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://scholar.google.com/citations?user=uZMihoYAAAAJ&hl=en', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=uZMihoYAAAAJ&citpid=3" alt="Prof. Dr. K.G.B. Santhosh Kumari">
+                        <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=uZMihoYAAAAJ&citpid=3">
                     </div>
                     <div class="speaker-info">
-                        <h3>Prof. Dr. K.G.B. Santhosh Kumari</h3>
+<h3>Prof. Dr. K.G.B. Santhosh Kumari</h3>
                         <div class="designation">Professor</div>
                         <div class="affiliation">International ESL Trainer - MoPSE & Visiting Professor, Department of Foreign Languages - Termez University of Economics & Service, Uzbekistan.</div>
                     </div>
                 </div>
-
-                <div class="speaker-card" onclick="window.open('https://in.linkedin.com/in/dr-swayam-prabha-satpathy-1745b135', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://in.linkedin.com/in/dr-swayam-prabha-satpathy-1745b135', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://media.licdn.com/dms/image/v2/C5103AQFyv6B84lzOjA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1568313992129?e=2147483647&v=beta&t=Lu-4QmFN-ZF2jEqzbdv5DVnXX6cvRRd_cVl3-ePJWTo" alt="Dr. Swayam Prabha Satpathy">
+                        <img src="https://media.licdn.com/dms/image/v2/C5103AQFyv6B84lzOjA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1568313992129?e=2147483647&v=beta&t=Lu-4QmFN-ZF2jEqzbdv5DVnXX6cvRRd_cVl3-ePJWTo">
                     </div>
                     <div class="speaker-info">
-                        <h3>Dr. Swayam Prabha Satpathy</h3>
+<h3>Dr. Swayam Prabha Satpathy</h3>
                         <div class="designation">Professor</div>
                         <div class="affiliation">Dept of Humanities, ITER, Siksha O Anusandhan University</div>
                     </div>
                 </div>
-
-                <div class="speaker-card" onclick="window.open('https://nitt.academia.edu/DrKarthikaVK', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://nitt.academia.edu/DrKarthikaVK', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://media.licdn.com/dms/image/v2/D5603AQGPR3QUuoXq4Q/profile-displayphoto-scale_200_200/B56Z04NwEGHEAY-/0/1774764625346?e=2147483647&v=beta&t=M3vbUt0UB39Uuz_Ybb-vQ8eUnsjwLdOjtlYDImOae1g" alt="Dr. V. K. Karthika">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQGPR3QUuoXq4Q/profile-displayphoto-scale_200_200/B56Z04NwEGHEAY-/0/1774764625346?e=2147483647&v=beta&t=M3vbUt0UB39Uuz_Ybb-vQ8eUnsjwLdOjtlYDImOae1g">
                     </div>
                     <div class="speaker-info">
                         <h3>Dr. V. K. Karthika</h3>
@@ -1432,10 +1461,9 @@
                         <div class="affiliation">National Institute of Technology, Tiruchirappalli</div>
                     </div>
                 </div>
-
-                <div class="speaker-card" onclick="window.open('https://scholar.google.com/citations?user=f13skrcAAAAJ&hl=en', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://scholar.google.com/citations?user=f13skrcAAAAJ&hl=en', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=f13skrcAAAAJ&citpid=9" alt="Prof. R. Vennela">
+                        <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=f13skrcAAAAJ&citpid=9'">
                     </div>
                     <div class="speaker-info">
                         <h3>Prof. R. Vennela</h3>
@@ -1443,10 +1471,9 @@
                         <div class="affiliation">NIT Warangal, Telangana</div>
                     </div>
                 </div>
-
-                <div class="speaker-card" onclick="window.open('https://scholar.google.com/citations?user=pjvKKuUAAAAJ&hl=en', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://scholar.google.com/citations?user=pjvKKuUAAAAJ&hl=en', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="http://mis.iiitdm.ac.in/Profile/images/Profile/kandharaja.jpeg" alt="Dr. Kandharaja K.M.C" onerror="this.src='https://via.placeholder.com/200x200?text=Dr.+Kandharaja+K.M.C'">
+                        <img src="http://mis.iiitdm.ac.in/Profile/images/Profile/kandharaja.jpeg" onerror="this.src='https://via.placeholder.com/200x200?text=Dr.+Kandharaja+K.M.C'">
                     </div>
                     <div class="speaker-info">
                         <h3>Dr. Kandharaja K.M.C</h3>
@@ -1454,10 +1481,9 @@
                         <div class="affiliation">IIITDM, Kanchipuram, Chennai, Tamilnadu</div>
                     </div>
                 </div>
-
-                <div class="speaker-card" onclick="window.open('https://scholar.google.com/citations?user=eTIBSdkAAAAJ&hl=en', '_blank')">
+                <div class="speaker-card" onclick="window.open('https://scholar.google.com/citations?user=eTIBSdkAAAAJ&hl=en', '_blank')" style="cursor: pointer;">
                     <div class="speaker-photo">
-                        <img src="https://res.cloudinary.com/dysrmfhoa/image/upload/v1777681925/WhatsApp_Image_2026-05-02_at_6.01.43_AM_lztrno.jpg" alt="Dr. Hatem Al-Shamea">
+                        <img src="https://res.cloudinary.com/dysrmfhoa/image/upload/v1777681925/WhatsApp_Image_2026-05-02_at_6.01.43_AM_lztrno.jpg">
                     </div>
                     <div class="speaker-info">
                         <h3>Dr. Hatem Al-Shamea</h3>
@@ -1469,7 +1495,7 @@
         </div>
     </section>
 
-    <!-- Objectives Section -->
+    <!-- Conference Objectives Section -->
     <section class="objectives">
         <div class="container">
             <h2>Conference Objectives</h2>
@@ -1502,14 +1528,14 @@
         </div>
     </section>
 
-    <!-- Themes Section -->
+    <!-- Conference Themes Section -->
     <section class="themes" id="themes">
         <div class="container">
             <h2>Conference Themes</h2>
             <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem; font-size: 1.05rem;">Comprehensive list of topics covered at ICIDHAI 2026</p>
             <div class="themes-grid">
                 <div class="theme-item"><span class="theme-arrow">→</span><p>AI and the Future of Literary Studies</p></div>
-                <div class="theme-item"><span class="theme-arrow">→</span><p>Computational Stylistics and Text Analysis</p></div>
+                <div class="theme-item"><span class="theme-arrow">→</span><p>Computational Stylistics and Distant Reading</p></div>
                 <div class="theme-item"><span class="theme-arrow">→</span><p>AI-generated poetry, fiction, and drama</p></div>
                 <div class="theme-item"><span class="theme-arrow">→</span><p>Narrative Theory in Algorithmic Environments</p></div>
                 <div class="theme-item"><span class="theme-arrow">→</span><p>Digital Textual Scholarship</p></div>
@@ -1544,7 +1570,7 @@
         </div>
     </section>
 
-    <!-- Fees Section -->
+    <!-- Registration Fees Section -->
     <section class="fees" id="fees">
         <div class="container">
             <h2>Registration Fees</h2>
@@ -1618,7 +1644,7 @@
                     <div class="event">Abstract Submission Deadline</div>
                 </div>
                 <div class="date-item">
-                    <div class="date">8 June 2026</div>
+                    <div class="date">8 May 2026</div>
                     <div class="event">Notification of Acceptance</div>
                 </div>
                 <div class="date-item">
@@ -1633,38 +1659,40 @@
         </div>
     </section>
 
-    <!-- Committees Section -->
+    <!-- Organizing Institutions Section -->
+    
+    <!-- Organizing Committee & Advisory Boards -->
     <section class="committee-section" id="committees">
         <div class="container">
             <h2>Committees & Advisory Boards</h2>
             
             <div class="board-card" style="margin-bottom: 2rem; grid-column: 1 / -1;">
-                <h3>Organizing Committee</h3>
+<h3>Organizing Committee</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
                     <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem;">CHIEF PATRON</h4>
+                        <h4 style="color: var(--secondary);">CHIEF PATRON</h4>
                         <p><strong>Sardar Gagandeep Singh Kohli</strong><br>Chancellor, GNU & Vice Chairman, GNI</p>
                     </div>
                     <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem;">PATRON</h4>
+                        <h4 style="color: var(--secondary);">PATRON</h4>
                         <p><strong>Dr. H. S. Saini</strong><br>Vice Chancellor, GNU</p>
                     </div>
                     <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem;">CONFERENCE CHAIR</h4>
+                        <h4 style="color: var(--secondary);">CONFERENCE CHAIR</h4>
                         <p><strong>Dr. B. Kedarnath</strong><br>Assistant Director, I-B.Tech, GNITC</p>
                     </div>
                     <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem;">CONFERENCE CO-CHAIRS</h4>
+                        <h4 style="color: var(--secondary);">CONFERENCE CO-CHAIRS</h4>
                         <p><strong>Dr. Raju Nellutla</strong><br>HoD-1, H&S-GNITC</p>
                         <p><strong>Dr. G. Srinivasulu Goud</strong><br>HOD-2, H&S-GNITC</p>
                     </div>
                     <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem;">CONVENERS</h4>
+                        <h4 style="color: var(--secondary);">CONVENERS</h4>
                         <p><strong>Dr. Kaniphnath M Kudale</strong>, Associate Professor (Eng), GNITC</p>
                         <p><strong>Dr. K. Sunitha</strong>, Assistant Professor (Eng), GNITC</p>
                     </div>
                     <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem;">CO-CONVENERS</h4>
+                        <h4 style="color: var(--secondary);">CO-CONVENERS</h4>
                         <p><strong>Dr. Pavani</strong>, Associate Professor (Eng)</p>
                         <p><strong>Dr. Venkanna</strong>, Associate Professor (Eng)</p>
                     </div>
@@ -1706,8 +1734,8 @@
         </div>
     </section>
 
-    <!-- Guidelines Section -->
-    <section style="padding: 5rem 0; background: var(--white);">
+    <!-- Submission Guidelines & Policy -->
+    <section class="guidelines-section" id="guidelines" style="padding: 4rem 0;">
         <div class="container">
             <h2>Submission & Policies</h2>
             <div class="guidelines-grid">
@@ -1725,7 +1753,7 @@
                 
                 <div class="guideline-card" style="background: var(--accent); color: var(--text-dark); border: 1px solid var(--border);">
                     <h3 style="color: var(--primary);">Plagiarism Policy</h3>
-                    <ul class="guideline-list" style="color: var(--text-dark);">
+                    <ul class="guideline-list">
                         <li>All submitted papers will be reviewed by the conference committee.</li>
                         <li>Similarity index check will be performed for all submissions.</li>
                         <li>All papers will be published with ISBN.</li>
@@ -1736,7 +1764,27 @@
         </div>
     </section>
 
-    <!-- Institutions Section -->
+    <!-- Venue Section -->
+    <section class="venue-section" style="padding: 4rem 0; background: white;">
+        <div class="container">
+            <h2>Venue</h2>
+            <div style="background: var(--accent); padding: 3rem; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">GURU NANAK INSTITUTIONS TECHNICAL CAMPUS</h3>
+                <p style="font-size: 1.2rem; color: var(--text-dark);">Ibrahimpatnam, Hyderabad.</p>
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+                    <div style="background: white; padding: 1rem 2rem; border-radius: 10px; border-top: 3px solid var(--secondary);">
+                        <p style="font-weight: bold; color: var(--primary);">📍 Distance from City</p>
+                        <p>28 km from Hyderabad</p>
+                    </div>
+                    <div style="background: white; padding: 1rem 2rem; border-radius: 10px; border-top: 3px solid var(--secondary);">
+                        <p style="font-weight: bold; color: var(--primary);">✈️ Distance from Airport</p>
+                        <p>26 km from RGI Airport</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="institutions">
         <div class="container">
             <h2>Organizing Institutions</h2>
@@ -1757,17 +1805,18 @@
         </div>
     </section>
 
-    <!-- Register Section -->
+    <!-- Registration Form Section -->
     <section class="register-section" id="register-form">
         <div class="container">
             <h2>Ready to Join?</h2>
             <p>Register now to submit your research paper, attend presentations, and network with international scholars. Spaces are limited!</p>
             <div class="register-button-container">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-stzl5TTuQIUEQlMXQltMTzXS-sOLhhi1nmDyepn1WUuRiA/viewform?usp=publish-editor" class="btn btn-primary" target="_blank">Register Now on Google Form</a>
-                <div class="register-qr">
-                    <img src="https://res.cloudinary.com/dysrmfhoa/image/upload/v1777656984/WhatsApp_Image_2026-05-01_at_8.57.03_AM_cs97ry.jpg" alt="Registration QR Code">
-                    <p>Scan to Register</p>
+    <div style="background: var(--accent); padding: 2rem; border-radius: 10px; border: 2px dashed var(--secondary);">
+                    <img src="https://res.cloudinary.com/dysrmfhoa/image/upload/v1777656984/WhatsApp_Image_2026-05-01_at_8.57.03_AM_cs97ry.jpg" alt="Registration QR Code" style="width: 250px; height: 250px;">
+                    <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: var(--primary);">Scan to Register</p>
                 </div>
+            </div>
             </div>
             <p style="margin-top: 2rem;">Registration closes on 15 July 2026. Early registration recommended!</p>
         </div>
@@ -1793,6 +1842,9 @@
             </div>
         </div>
     </section>
+
+    
+    
 
     <footer>
         <p>&copy; 2026 ICIDHAI - International Conference on Innovations in Digital Humanities through AI</p>
@@ -1829,11 +1881,12 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.speaker-card, .detail-card, .partner-card-premium, .date-item, .objective-card, .theme-item, .institution-card, .contact-card').forEach(el => {
+        document.querySelectorAll('.speaker-card, .detail-card, .publication-card, .date-item, .objective-card, .theme-item, .institution-card, .contact-card').forEach(el => {
             observer.observe(el);
         });
     </script>
 </body>
 </html>
+
 
 
